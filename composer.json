@@ -1,0 +1,15 @@
+{
+    "name": "sarxzer/php-test",
+    "autoload": {
+        "psr-4": {
+            "Sarxzer\\PhpTest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sarxzer",
+            "email": "nathanvaillendet@gmail.com"
+        }
+    ],
+    "require": {}
+}
