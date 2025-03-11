@@ -1,10 +1,23 @@
 <?php
 
+require_once __DIR__ . '/../../core/Database.php';
+
 class HomeModel {
-    public function getData() {
-        return "Hello, World!";
+    private $db;
+
+    public function __construct() {
+        $this->db = new Database();
     }
+
+    public function getData() {
+        $this->db->query('SELECT * FROM posts');
+        return $this->db->resultSet();
+    }
+
     public function getAnotherData() {
-        return "Hello, Universe!";
+        // Example method to get another set of data
+        $this->db->query('SELECT * FROM posts WHERE id = :id');
+        $this->db->bind(':id', 1);
+        return $this->db->resultSet();
     }
 }
